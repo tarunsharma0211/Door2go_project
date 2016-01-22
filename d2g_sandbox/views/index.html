@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset='utf-8'>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Doors2Go</title>
+<!-- General css for slides and text in slides-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--Some custom css fullpage-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+<!--Css for feedback slider bars-->
+	<link rel="stylesheet" type="text/css" href="css/style_feedback.css">
+
+
+	<script type="text/javascript" src="externaljs/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="externaljs/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="externaljs/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/my_scripts.js"></script>
+	<script src="js/signup.js"> </script>
+	
+</head>
+
+<!--Fullpage script-->
+<script>
+	jQuery(document).ready(function($) {
+		$("#fullpage").fullpage({
+			sectionsColor:['#a9e6eb','#1BBC9B','#7E8F7C'],
+			anchors:['1stPage','2ndPage','3rdPage'],
+			menu:'#menu',
+			scrollBar:false,
+			//scrollOverflow:true
+			navigation:false,
+			//navigationTooltips:['Home','About Us','Feedback'],
+			slidesNavigation:true,
+			navigationPosition:'left',
+			//slidesNavPosition:'top'
+			loopTop:true,
+			loopBottom:true,
+			loopHorizontal:false
+
+			
+		});
+	})
+	
+	function change_visibility (block_4_close, block_4_open) {
+   $(document).ready(function(){
+       $('#'+block_4_close).css('display','none');
+       $('#'+block_4_open).css('display','');
+       return false;
+   });
+}
+</script>
+
+<body>
+
+<!--Uptop page menu-->
+<ul id="menu">
+	<li data-menuanchor="1stPage"><a href="#1stPage">Home</a></li>
+	<li data-menuanchor="2ndPage"><a href="#2ndPage">Sign up/Sign in</a></li>
+	<li data-menuanchor="3rdPage"><a href="#3rdPage">Feedback</a></li>
+</ul>
+
+
+<div id="fullpage">
+<!--FIRST SLIDE BEGIN-->
+	<div class="section " id="section0">
+	<!--PUT LOGO HERE-->
+<div class="slide" id="slide1">
+        <h1>Door2Go</h1>
+	<!--THREE BARS WITH VIDEO, DESCRIPTION, IMAGE-->
+	<div id="contentBox" style="margin:0 auto; width:70%">
+
+  <p> Do you find yourself saying I wish I had more time to...</p>
+	
+        <p>Learn a foreign<span style="color:#8a42c7;"> language</span>?
+		 Learn to play <span style="color:#ad9c3f;"> violin</span>?
+		 <p>To mow the <span style="color:#14b156;"> lawn</span>?</p>
+
+<p style="color:red;">FRET NOT!</p>
+
+<p><span style="color:#444;">DOOR2GO</span> is your answer!
+
+Become a member and avail any service at your doorstep at your convenient time.</p>
+
+<p>Off you go, pamper yourself with <span style="color:#444;">DOOR2GO!</span></p>
+
+ </div> 
+    <div class="slide" id="slide2">
+		
+			<video width="500" height="240" controls><source src="BhangraSong.mp3" ></video>
+		
+	</div>
+        </div>
+
+	</div>
+<!--FIRST SLIDE END-->	
+<!--SECOND SLIDE BEGIN-->	
+	<div class="section" id="section1">
+
+	<!--AFTER LOGIN HERE WILL BE BRIEF INFORMATION ABOUT USER-->	
+<div id="r1" > 				
+	<!--LOGIN AND REGISTRATION LINKS-->
+				<div class="link_group">
+					<a class="show_popup" rel="reg_form" href="#"><h1>sign in</h1></a>
+					<a href="/register"><h1>sign up</h1></a>
+				</div>
+	</div>
+	<!--POP UP FILLING-->			
+	<div class="popup reg_form" >
+		<!--<a class="close" href="#">close</a>-->
+		<h2>Log in</h2>
+		<form action="/login" method="POST" name="Login Page">
+				
+			<input type="text" id="email" name="email" placeholder="username" />	
+			
+			<input type="password" id="password"  name="password"  placeholder="password"/>
+			
+			<input  type="Submit" value="Login" />	
+			
+		</form>
+        
+	</div>
+	
+
+	</div>
+
+	<!--SECOND SLIDE END-->
+	
+	<!--THIRD SLIDE BEGIN-->
+	<div class="section" id="section2">
+		<div class="intro">
+
+		<!--CONTACT FORM (TEMPLATE)-->
+			<div class="container">
+			
+  <form id="contact" name="contact" action="/feedback_submit" method="post" onsubmit="return feedbackValidate();">
+    <h3>Have anything to say?</h3>
+    
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2"  >
+    </fieldset>
+    <fieldset>
+      <input placeholder="Password" type="password" tabindex="4" style="width:350px">
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your Feedback here..." tabindex="5"></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<!--HERE WILL BE FEEDBACK #1 WITH USER'S PROFILE PIC AND NAME-->
+		<div class ="container">
+		<div id="contact">
+		<!--<p>Lila said:</p>-->
+		<textarea type="text" disabled="true"/></textarea>
+		</div>
+		</div>
+<!--HERE WILL BE FEEDBACK #2-->
+		<div class ="container">
+		<div id="contact">
+		<!--<p>John said:</p>-->
+		<textarea type="text" disabled="true"/></textarea>
+		</div>
+		</div>
+	<!--THIRD SLIDE END-->
+</div>
+
+
+</body>
+</html>

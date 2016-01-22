@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Door2Go</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/profile_style.css">
+    <script type="text/javascript" src="../externaljs/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/my_scripts.js"></script>
+</head>
+
+<body>
+    <%=user%>
+        <div id="w">
+            <div id="content" class="clearfix">
+                <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
+                <h1>Profile</h1>
+
+                <p>
+                    <!--<input type="text" id="search" placeholder="Search...">
+                    <button id="search_box" onclick="search();">
+                    <div id="search_result"></div>-->
+                    <form class="form-search">
+<div class="row">
+  <div class="col-lg-3">
+    <div class="input-group" >
+      <input type="text" class="form-control typeahead" placeholder="Type your Query" id = "search_text">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-info" id="search_btn" onclick="return send_data();">Go!</button>
+      </span>
+    </div><br><br>
+          <div class="panel panel-info ">
+        <div class="panel-heading">Search Results:</div>
+      <div id ="result" class="panel-body"></div>
+    </div>
+  </div>
+</div>
+        </form>
+                    
+                </p>
+
+                <nav id="profiletabs">
+                    <ul class="clearfix">
+                        <li><a href="#bio" class="sel">Bio</a></li>
+                        <li><a href="#activity">Service Info</a></li>
+
+                        <li><a href="#settings">Profile details</a></li>
+                    </ul>
+
+                </nav>
+
+
+                <section id="bio">
+                    <p class="setting"><span>About Me:</span>
+                        <input type="textarea" id="nob" value="<%=bio%>"  size="50">
+                    </p>
+
+
+
+                </section>
+
+                <section id="activity" class="hidden">
+                    <p class="setting"><span>Services Provided:</span>
+                        <input type="text" id="nob" value="<%=service%>">
+                    </p>
+                    <p class="setting"><span>Service Details :</span>
+                        <input type="text" id="nob" value="<%=detail%>">
+                    </p>
+
+                </section>
+
+                <!--<section id="contact" class="hidden">
+        <p>contact this person</p>
+        <form id="contact" action="" method="post">
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1">
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your Message here..." tabindex="5"></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+      </section>-->
+
+                <section id="settings" class="hidden">
+
+
+                    <p class="setting"><span>Email</span>
+                        <input type="text" id="nob" value="<%=user%>" size="50"> </p>
+
+                    <p class="setting"><span>Name</span>
+                        <input type="text" id="nob" value="<%=fullname%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>Phone</span>
+                        <input type="text" id="nob" value="<%=phone%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>Street</span>
+                        <input type="text" id="nob" value="<%=street%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>City</span>
+                        <input type="text" id="nob" value="<%=city%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>Country</span>
+                        <input type="text" id="nob" value="<%=country%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>Birthday</span>
+                        <input type="text" id="nob" value="<%=birth%>" size="50">
+                    </p>
+
+                    <p class="setting"><span>Gender</span>
+                        <input type="text" id="nob" value="<%=gender%>" size="50">
+                    </p>
+                    
+                        </section>
+
+<a href="/logout">
+                        <button id="logout">Logout</button>
+                    </a>
+                </section>
+            </div>
+            <!-- @end #content -->
+        </div>
+        <!-- @end #w -->
+        <script type="text/javascript">
+            $(function () {
+                $('#profiletabs ul li a').on('click', function (e) {
+                    e.preventDefault();
+                    var newcontent = $(this).attr('href');
+
+                    $('#profiletabs ul li a').removeClass('sel');
+                    $(this).addClass('sel');
+
+                    $('#content section').each(function () {
+                        if (!$(this).hasClass('hidden')) {
+                            $(this).addClass('hidden');
+                        }
+                    });
+
+                    $(newcontent).removeClass('hidden');
+
+
+                });
+            });
+        </script>
+</body>
+
+</html>

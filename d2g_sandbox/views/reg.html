@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <title>
+        Registration
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- General css for slides and text in slides-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--Some custom css fullpage-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_reg.css" />
+
+
+    <script type="text/javascript" src="externaljs/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="externaljs/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="externaljs/jquery.slimscroll.min.js"></script>
+
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+</head>
+
+<script>
+/*    jQuery(document).ready(function ($) {
+        $("#fullpage").fullpage({
+            //sectionsColor:['#C63D0F','#1BBC9B','#7E8F7C'],
+            //anchors:['1stPage','2ndPage','3rdPage'],
+            menu: '#menu',
+            scrollBar: false,
+            //scrollOverflow:true
+            navigation: false,
+            //navigationTooltips:['Home','About Us','Feedback'],
+            slidesNavigation: true,
+            navigationPosition: 'left',
+            //slidesNavPosition:'top'
+            loopTop: true,
+            loopBottom: true,
+            loopHorizontal: false
+
+
+        });
+    })*/
+
+    function change_visibility(block_4_close, block_4_open) {
+        $(document).ready(function () {
+            $('#' + block_4_close).css('display', 'none');
+            $('#' + block_4_open).css('display', '');
+            return false;
+        });
+    }
+
+
+
+</script>
+  <script>
+  $(function() {
+    $( "#birth" ).datepicker();
+  });
+  </script>
+<body>
+
+    <ul id="menu">
+        <li><a href="/#1stPage">Home</a></li>
+        <li><a href="/#2ndPage">Already have a login</a></li>
+        <li><a href="/#3rdPage">Feedback</a></li>
+    </ul>
+    <h1 style="text-align:center;font-size: 6em;
+color:#127E69;"> Door2GO</h1>
+    <div id="form" class="container">
+        <form name="Registration Page" id="register_form" class="register" method="post" action="/success" onsubmit="return formValidate();">
+
+            <fieldset class="row1">
+                <legend>Account
+                </legend>
+                <p>
+                    <label>Email *
+                    </label>
+                    <input name="email" type="text" />
+                </p>
+                <p>
+                    <label>Password*
+                    </label>
+                    <input name="password" type="password" />
+                    <label class="obinfo">* obligatory fields
+                    </label>
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Address
+                </legend>
+                <p>
+                    <label>First Name *
+                    </label>
+                    <input id="fname" name="fname" type="text" class="long" />
+                </p>
+                <p>
+                    <label>Last Name *
+                    </label>
+                    <input id="lname" name="lname" type="text" class="long" />
+                </p>
+                <p>
+                    <label>Phone *
+                    </label>
+                    <input id="pnumber" name="pnumber" type="text" class="long" maxlength="10" />
+                </p>
+                <p>
+                    <label>Street
+                    </label>
+                    <input id="street" name="street" type="text" class="long" />
+                </p>
+                <p>
+                    <label>City *
+                    </label>
+                    <input id="city" name="city" type="text" class="long" />
+                </p>
+                <p>
+                    <label>Country *
+                    </label>
+                    <input id="country" name="country" type="text" class="long" />
+                </p>
+                <p>
+                <label>BIO/About Yourself *
+                    </label>
+                    <textarea   id="bio" name="bio" rows="4" ></textarea>
+                </p>
+
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Further Information
+                </legend>
+                <p>
+                    <label>Gender *</label>
+                    <input id="country" name="gender" type="text"  />
+                </p>
+                <p>
+                    <label>Birthday *
+                    </label>
+                    <input id="birth" name="birth" type="text"  /> Format =---- 
+                </p>
+                <p>
+                    <label>What are you *
+                    </label>
+                    <input id="service" name="service" type="text"  /> e.g. Service Provider or Need Service</p>
+                    
+                    <!--<p>
+                        <label>Service Provider
+                        </label>
+                        <input type="checkbox" value="" />
+                        <label>Customer
+                        </label>
+                        <input type="checkbox" value="" />
+                    </p>-->
+                    <div class="infobox">
+                        
+                        <p>If you need services please write Need Service and if you provide some kind of service please provide the details in the textbox below
+                        </p>
+                        <p><textarea  id="detail" name="detail" rows="4"></textarea>
+                    </div>
+            </fieldset>
+            <fieldset class="row4">
+
+                <p class="agreement">
+                    <input type="checkbox" value="" />
+                    <label>* I accept <a href=http://3.bp.blogspot.com/-YY2jFAAgv14/TV_DHnsDhJI/AAAAAAAALQE/roHvaMQ1HB8/s1600/king%2Bbugs%2Bbunny.jpg>Terms and Conditions</a></label>
+                </p>
+
+            </fieldset>
+
+            <div>
+                <input class="submit" type="Submit"  style="background-color: #ad8caf;
+	border-bottom: 5px solid #5A4B5B; postion: relative; float: right;  height:50px; width:100px">
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
+    <script>
+    
+    function formValidate() {
+    
+    //Firt name
+    var x = document.forms["Registration Page"]["fname"].value;
+    if (x == null || x == "") {
+        alert("Please enter the first name.");
+        return false;
+    }
+    var letters = /^[A-Za-z]+$/;
+    if (!(document.forms["Registration Page"]["fname"].value.match(letters))) {
+        alert("First name must have alphabets only.");
+        return false;
+    }
+    
+    //Last name
+    var x = document.forms["Registration Page"]["lname"].value;
+    if (x == null || x == "") {
+        alert("Please enter the last name.");
+        return false;
+    }
+    if (!(document.forms["Registration Page"]["lname"].value.match(letters))) {
+
+        alert("Last name must have alphabets only");
+        return false;
+    }
+    
+    //Email
+    var x = document.forms["Registration Page"]["email"].value;
+    if (x == null || x == "") {
+        alert("E-mail Id cannot be an empty field");
+        return false;
+    }
+    var x = document.forms["Registration Page"]["email"].value;
+    var y = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!y.test(x)) {
+        alert("Please enter a valid Email address.");
+        return false;
+    }
+
+    //Phone number
+    var x = document.forms["Registration Page"]["pnumber"].value;
+    if (x == null || x == "") {
+        alert("Please enter Phone number");
+        return false;
+    }
+    var number = /^[0-9]+$/;
+    if (!(document.forms["Registration Page"]["pnumber"].value.match(number))) {
+        alert("Phone number can only contain numbers");
+        return false;
+    }
+    
+//City
+    var x = document.forms["Registration Page"]["city"].value;
+    if (x == null || x == "") {
+        alert("Please enter your city");
+        return false;
+    }
+    var letters = /^[A-Za-z]+$/;
+    if (!(document.forms["Registration Page"]["city"].value.match(letters))) {
+        alert("City name must have alphabets only.");
+        return false;
+    }
+send();
+}
+    function send() {
+
+
+        var data = $("#register_form").serializeArray();
+
+        $.ajax({
+            type: 'POST',
+            url: '/success',
+            data: data,
+            error: function (e) {
+                console.log(e);
+            },
+            success: function (r) {
+                
+
+                    console.log(r);
+
+                
+
+            }
+
+        });
+
+        return false;
+
+    };
+    </script>
+
+
+</html>
